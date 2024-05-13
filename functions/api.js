@@ -21,3 +21,7 @@ mongoose
 
 app.use('/.netlify/functions/api', router);
 module.exports.handler = serverless(app);
+
+app.listen(3000,()=>{
+    console.log('server is running on port 3000')
+})
