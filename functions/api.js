@@ -19,10 +19,11 @@ mongoose
 .then(( )=> console.log('Connected to MongoDB'))
 .catch((error) => console.error('Failed to connect to MongoDB', error));
 
-// app.use('/.netlify/functions/api', blogPostRoutes);
-// module.exports.handler = serverless(app);
-app.use('/', blogPostRoutes);
 
-app.listen(5000, () => {
-    console.log(`Server is running on port 5000`);
-});
+app.use('/', blogPostRoutes);
+app.use('/.netlify/functions/api', blogPostRoutes);
+module.exports.handler = serverless(app);
+
+// app.listen(3000, () => {
+//     console.log(`Server is running on port 5000`);
+// });
